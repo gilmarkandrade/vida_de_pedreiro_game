@@ -42,7 +42,7 @@ func _physics_process(delta):
 			
 		if Input.is_action_pressed("dow_corda"):
 			
-				
+			
 			$Path2D/PathFollow2D.offset += 4
 			
 			
