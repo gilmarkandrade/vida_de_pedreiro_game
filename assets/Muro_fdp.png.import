@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/TileMapCanos.png-66f01194caf364851d3619a01d64c541.stex"
+path="res://.import/Muro_fdp.png-feb5faddf448e755a414239e721c71ea.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Objects/TileMapCanos.png"
-dest_files=[ "res://.import/TileMapCanos.png-66f01194caf364851d3619a01d64c541.stex" ]
+source_file="res://assets/Muro_fdp.png"
+dest_files=[ "res://.import/Muro_fdp.png-feb5faddf448e755a414239e721c71ea.stex" ]
 
 [params]
 
