@@ -1,8 +1,105 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/main_menu.gd" type="Script" id=1]
 
 [node name="main_menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="bt_jogar" type="TextureButton" parent="."]
+margin_left = 397.218
+margin_top = 212.598
+margin_right = 587.218
+margin_bottom = 252.598
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="bt_jogar"]
+margin_left = 46.3792
+margin_top = 5.94601
+margin_right = 86.3792
+margin_bottom = 36.946
+text = "jogar
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_creditos" type="TextureButton" parent="."]
+margin_left = 404.569
+margin_top = 288.586
+margin_right = 606.569
+margin_bottom = 328.586
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="bt_creditos"]
+margin_left = 33.597
+margin_top = 5.2771
+margin_right = 73.597
+margin_bottom = 19.2771
+text = "creditos
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_sair" type="TextureButton" parent="."]
+margin_left = 411.0
+margin_top = 393.0
+margin_right = 625.0
+margin_bottom = 427.0
+
+[node name="Label3" type="Label" parent="bt_sair"]
+margin_left = 33.4359
+margin_top = 2.83691
+margin_right = 73.4359
+margin_bottom = 33.8369
+text = "sair
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="panel_credit" type="ColorRect" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -281.0
+margin_top = -219.0
+margin_right = 281.0
+margin_bottom = 219.0
+color = Color( 0, 0, 0, 0.898039 )
+
+[node name="Label" type="Label" parent="panel_credit"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -183.0
+margin_top = -164.0
+margin_right = 183.0
+margin_bottom = 164.0
+
+[node name="bt_voltar" type="Button" parent="panel_credit"]
+margin_left = 37.0068
+margin_top = 401.251
+margin_right = 105.007
+margin_bottom = 421.251
+text = "back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="bt_jogar" to="." method="_on_bt_jogar_pressed"]
+[connection signal="pressed" from="bt_creditos" to="." method="_on_bt_creditos_pressed"]
+[connection signal="pressed" from="bt_sair" to="." method="_on_bt_sair_pressed"]
+[connection signal="pressed" from="panel_credit/bt_voltar" to="." method="_on_bt_voltar_pressed"]
