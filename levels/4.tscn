@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Objects/TileMapCarrinho-de-cimento.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/Objects/TileMapEmpilhadeira.png" type="Texture" id=5]
 [ext_resource path="res://assets/tilemaps/TileMapArtboard-1.png" type="Texture" id=6]
 [ext_resource path="res://assets/tilemaps/TileMapFerro.png" type="Texture" id=7]
+[ext_resource path="res://scenes/portal.tscn" type="PackedScene" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 0, 64, 0, 64, 64, 0, 64 )
@@ -330,3 +331,7 @@ texture = ExtResource( 6 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 413.64, 280.458 )
+
+[node name="portal" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3614.89, 224.606 )
+Next_scene = 5

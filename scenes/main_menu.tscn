@@ -29,10 +29,10 @@ __meta__ = {
 }
 
 [node name="bt_jogar" type="TextureButton" parent="."]
-margin_left = 983.499
-margin_top = 121.724
-margin_right = 1238.5
-margin_bottom = 232.724
+margin_left = 983.914
+margin_top = 103.652
+margin_right = 1238.91
+margin_bottom = 214.652
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 2 )
@@ -66,10 +66,10 @@ __meta__ = {
 }
 
 [node name="bt_creditos" type="TextureButton" parent="."]
-margin_left = 988.3
-margin_top = 258.739
-margin_right = 1243.3
-margin_bottom = 369.739
+margin_left = 987.3
+margin_top = 247.739
+margin_right = 1242.3
+margin_bottom = 358.739
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 2 )
@@ -154,10 +154,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -183.0
-margin_top = -164.0
-margin_right = 183.0
-margin_bottom = 164.0
+margin_left = -230.143
+margin_top = -138.183
+margin_right = 77.8566
+margin_bottom = -54.1834
+rect_scale = Vector2( 1.44, 3.2 )
+text = "Gabriel Abraão Cheida Bileski - Music Composer
+Kayo carvalho - Artist
+Matheus Correia- Level Designer
+Gilmar  Andrade - Programmer
+João Pieroni - Sound Effects Producer"
 
 [node name="bt_voltar" type="Button" parent="panel_credit"]
 margin_left = 37.0068
@@ -181,7 +187,7 @@ margin_top = 29.9661
 margin_right = 1052.08
 margin_bottom = 268.966
 custom_fonts/font = SubResource( 2 )
-text = "Vida de Pedreiro
+text = "Bricklayer's life
 "
 __meta__ = {
 "_edit_use_anchors_": false
