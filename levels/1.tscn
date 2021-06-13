@@ -321,7 +321,6 @@ script = ExtResource( 8 )
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Ceu" type="Sprite" parent="ParallaxBackground"]
-self_modulate = Color( 1, 1, 1, 0.627451 )
 position = Vector2( 1274.86, 591.323 )
 scale = Vector2( 1.39523, 1.45423 )
 texture = ExtResource( 10 )
