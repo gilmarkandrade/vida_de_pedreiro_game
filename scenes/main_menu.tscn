@@ -55,7 +55,7 @@ custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
 custom_constants/shadow_as_outline = -1
-text = "jogar
+text = "Play
 "
 align = 1
 valign = 1
@@ -67,9 +67,9 @@ __meta__ = {
 
 [node name="bt_creditos" type="TextureButton" parent="."]
 margin_left = 988.3
-margin_top = 248.144
+margin_top = 258.739
 margin_right = 1243.3
-margin_bottom = 359.144
+margin_bottom = 369.739
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 2 )
@@ -92,7 +92,8 @@ custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
 custom_constants/shadow_as_outline = -1
-text = "Credts
+text = "Credit
+
 "
 align = 1
 valign = 1
@@ -103,10 +104,10 @@ __meta__ = {
 }
 
 [node name="bt_sair" type="TextureButton" parent="."]
-margin_left = 991.805
-margin_top = 374.356
-margin_right = 1246.8
-margin_bottom = 485.356
+margin_left = 989.686
+margin_top = 399.783
+margin_right = 1244.69
+margin_bottom = 510.783
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 3 )
 texture_hover = ExtResource( 2 )
@@ -200,6 +201,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
 
 [node name="menu_soundtrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+autoplay = true
 
 [connection signal="pressed" from="bt_jogar" to="." method="_on_bt_jogar_pressed"]
 [connection signal="pressed" from="bt_creditos" to="." method="_on_bt_creditos_pressed"]

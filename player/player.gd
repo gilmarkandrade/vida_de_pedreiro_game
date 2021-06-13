@@ -15,38 +15,45 @@ func _physics_process(delta):
 	
 		
 	if stop == false:
-		
+		if Input.is_action_just_pressed("ui_up"):
+			if is_on_floor():
+				move.y = jump_force
+				$anim_player.play("jump")
+				
 		if Input.is_action_pressed("ui_left"):
 			if move.x > -max_speed :
 				move.x -= speed 
 				
 			else:
 				move.x =- (max_speed+10)
-				
+			if is_on_floor():
+				$anim_player.play("walk")
 		elif Input.is_action_pressed("ui_right"):
 			if max_speed > move.x:
 				move.x += speed 
 				
 			else:
 				move.x = + (max_speed+10)
-		
+				
+			if is_on_floor():
+				$anim_player.play("walk")
 		else:
 			move.x = 0
 			
-		if Input.is_action_just_pressed("ui_up"):
-			if is_on_floor():
-				move.y = jump_force
+		
+				
 		if Input.is_action_pressed("up_corda"):
 		
 			$Path2D/PathFollow2D.offset -= 3
-			
+			$anim_player.play("move_corda")
 			
 		if Input.is_action_pressed("dow_corda"):
 			
-			
+			$anim_player.play("move_corda")
 			$Path2D/PathFollow2D.offset += 4
 			
-			
+	else:
+		move.x = 0
 		
 	move = move_and_slide(move,up)
 	

@@ -60,7 +60,7 @@ focus_neighbour_left = NodePath("../bt_quit")
 focus_neighbour_top = NodePath(".")
 focus_neighbour_right = NodePath("../bt_quit")
 focus_neighbour_bottom = NodePath(".")
-text = "Restart game"
+text = "Restart level"
 __meta__ = {
 "_edit_use_anchors_": false
 }

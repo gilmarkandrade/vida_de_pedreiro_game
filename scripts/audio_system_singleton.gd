@@ -1,9 +1,10 @@
 extends Node2D
 
 
-func play(value):
+func _play(value):
+	print(value)
+	if get_node(value).playing == false:
+		get_node(str(value)).play()
 	
-	get_node(value).play()
-
-func stop(value):
-	get_node(value).stop()
+func _stop(value):
+	get_node(str(value)).stop()
