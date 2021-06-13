@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 1384.56, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 152.961, 206.49 )
+
+[node name="fase_teste" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 648.783, 395.107 )
+shape = SubResource( 1 )
+
+[node name="player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 632.352, 312.304 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"damage",
+]]
+position = Vector2( -1483.46, -67.7084 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=[
+"damage",
+]]
+position = Vector2( 1026.32, 737.664 )
+shape = SubResource( 2 )

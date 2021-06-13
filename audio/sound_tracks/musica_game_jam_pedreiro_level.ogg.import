@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/musica_game_jam_pedreiro_level.ogg-8b47a6e12fbb7289fe18a3a271dfa3f2.oggstr"
+
+[deps]
+
+source_file="res://audio/sound_tracks/musica_game_jam_pedreiro_level.ogg"
+dest_files=[ "res://.import/musica_game_jam_pedreiro_level.ogg-8b47a6e12fbb7289fe18a3a271dfa3f2.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

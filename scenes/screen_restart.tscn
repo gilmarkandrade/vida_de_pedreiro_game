@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Menu/pressed.png" type="Texture" id=1]
+[ext_resource path="res://assets/fonts/leatherface3dital.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/screen_restart.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 73
+outline_size = 1
+use_filter = true
+font_data = ExtResource( 2 )
+
+[node name="screen_restart" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 100
+
+[node name="pressed" type="Sprite" parent="CanvasLayer"]
+position = Vector2( 654.408, 355.227 )
+scale = Vector2( 1.71265, 2.4557 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+margin_left = 523.876
+margin_top = 282.598
+margin_right = 776.876
+margin_bottom = 350.598
+custom_fonts/font = SubResource( 1 )
+text = "Game Over"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_quit" type="Button" parent="CanvasLayer"]
+margin_left = 731.413
+margin_top = 425.636
+margin_right = 840.413
+margin_bottom = 461.636
+focus_neighbour_left = NodePath("../bt_restart")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath("../bt_restart")
+focus_neighbour_bottom = NodePath(".")
+text = "Quit game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bt_restart" type="Button" parent="CanvasLayer"]
+margin_left = 457.364
+margin_top = 427.0
+margin_right = 564.364
+margin_bottom = 459.0
+focus_neighbour_left = NodePath("../bt_quit")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath("../bt_quit")
+focus_neighbour_bottom = NodePath(".")
+text = "Restart level"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="CanvasLayer/bt_quit" to="." method="_on_bt_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/bt_restart" to="." method="_on_bt_restart_pressed"]
