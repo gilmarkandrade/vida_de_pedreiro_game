@@ -326,7 +326,7 @@ position = Vector2( 2463.83, 900.148 )
 texture = ExtResource( 5 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 428.463, 304.646 )
+position = Vector2( 314.17, 342.743 )
 
 [node name="Camera2D" parent="player" index="1"]
 limit_left = 0

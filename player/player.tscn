@@ -372,7 +372,8 @@ texture = ExtResource( 22 )
 offset = Vector2( 0, 250 )
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2( 1.88989, 78.1151 )
+position = Vector2( 1.95566, 60.1132 )
+enabled = true
 
 [connection signal="area_entered" from="Path2D/PathFollow2D/character_2/area_dano" to="." method="_on_area_dano_area_entered"]
 [connection signal="area_entered" from="Path2D/PathFollow2D/character_2/area_externa" to="." method="_on_area_externa_area_entered"]

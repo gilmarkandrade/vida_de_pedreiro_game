@@ -11,5 +11,5 @@ dest_files=[ "res://.import/musica_game_jam_pedreiro_final.ogg-6b08a7eb5387124a8
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

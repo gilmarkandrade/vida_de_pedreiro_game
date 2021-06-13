@@ -8,12 +8,12 @@ var jump_force = -400
 var stop = false
 var death = false
 var liberate_reclama = false
-
+var on_floor = false
 func _physics_process(delta):
 	
 	move.y += gravity
-	
-	
+	if !$RayCast2D.is_in_group("player"):
+		on_floor= $RayCast2D.is_colliding()
 				
 	if stop == false:
 		
@@ -64,9 +64,9 @@ func _physics_process(delta):
 		$anim_player_braco.play("idle")
 		$anim_player_torso.play("idle")
 		move.x = 0
-	if death == false:
+	if death == false :
 		if Input.is_action_just_pressed("ui_up"):
-			if is_on_floor():
+			if is_on_floor() or on_floor:
 				move.y = jump_force
 				$anim_player_torso.play("jump")
 				$pulo.play()
@@ -79,7 +79,8 @@ func _on_area_dano_area_entered(area):
 	if area.is_in_group("damage") and death == false:
 		death = true
 		_death()
-
+	if area.is_in_group("final"):
+		stop = true
 
 
 func _on_area_externa_area_entered(area):

@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Objects/TileMapCarrinho-de-cimento.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://scripts/world.gd" type="Script" id=8]
 [ext_resource path="res://scenes/portal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/Objects/Ceu.png" type="Texture" id=10]
+[ext_resource path="res://scripts/triggercontrosl.gd" type="Script" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 64, 0, 64, 0, 64, 64, 0, 64 )
@@ -294,6 +295,24 @@ points = PoolVector2Array( 0, 0, 12, 0, 12, 108, 0, 108 )
 } ]
 14/z_index = 0
 
+[sub_resource type="RectangleShape2D" id=24]
+extents = Vector2( 107.938, 92.5669 )
+
+[sub_resource type="Animation" id=25]
+resource_name = "New Anim"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [node name="1" type="Node2D"]
 script = ExtResource( 8 )
 
@@ -345,6 +364,7 @@ z_index = 1
 [node name="Camera2D" parent="player" index="1"]
 limit_left = 0
 limit_top = -152
+limit_right = 6650
 limit_bottom = 1340
 
 [node name="Area2D" type="Area2D" parent="." groups=[
@@ -377,5 +397,30 @@ polygon = PoolVector2Array( 6151.32, 383.14, 6210.78, 383.14, 6213.16, 701.847, 
 [node name="portal" parent="." instance=ExtResource( 9 )]
 position = Vector2( 6717.31, 72.2542 )
 Next_scene = 2
+
+[node name="Label" type="Label" parent="."]
+margin_left = 7.13522
+margin_top = 80.8661
+margin_right = 180.135
+margin_bottom = 168.866
+rect_scale = Vector2( 2.24, 2.48 )
+text = "Arrows moves the player
+Z, X move the rope"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="Label"]
+script = ExtResource( 11 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Label/Area2D"]
+position = Vector2( 101.817, 66.0989 )
+shape = SubResource( 24 )
+
+[node name="animtriggercontrol" type="AnimationPlayer" parent="Label"]
+"anims/New Anim" = SubResource( 25 )
+
+[connection signal="body_entered" from="Label/Area2D" to="Label/Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Label/Area2D" to="Label/Area2D" method="_on_Area2D_body_exited"]
 
 [editable path="player"]

@@ -308,15 +308,16 @@ position = Vector2( 1106.65, 1163.3 )
 texture = ExtResource( 5 )
 
 [node name="player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 413.64, 280.458 )
+position = Vector2( 401.041, 340.934 )
 
 [node name="Camera2D" parent="player" index="1"]
 limit_left = 0
 limit_top = -150
+limit_right = 7600
 limit_bottom = 1340
 
 [node name="portal" parent="." instance=ExtResource( 6 )]
-position = Vector2( 7681.04, 438.878 )
+position = Vector2( 7675.38, 438.878 )
 Next_scene = 3
 
 [node name="Area2D" type="Area2D" parent="." groups=[
