@@ -6,7 +6,8 @@ var max_speed = 300
 var gravity = 30
 var jump_force = -400
 var stop = false
-
+var death = false
+var liberate_reclama = false
 
 func _physics_process(delta):
 	
@@ -47,5 +48,34 @@ func _physics_process(delta):
 			
 			
 		
-		move = move_and_slide(move,up)
+	move = move_and_slide(move,up)
 	
+
+#=================================== personagem 2 ====================================
+
+func _on_area_dano_area_entered(area):
+	if area.is_in_group("damage") and death == false:
+		death = true
+		_death()
+
+
+
+func _on_area_externa_area_entered(area):
+	if area.is_in_group("damage") and liberate_reclama == false:
+		$Path2D/PathFollow2D/character_2/anim_char_2.current_animation = "esperniando"
+		$Path2D/PathFollow2D/character_2/reclamando.play()
+		liberate_reclama = true
+func _on_anim_char_2_animation_finished(anim_name):
+	if anim_name == "esperniando":
+		$Path2D/PathFollow2D/character_2/anim_char_2.current_animation = "idle"
+		liberate_reclama = false
+		
+func _death():
+	stop = true
+	$Path2D/PathFollow2D/character_2/dano.play()
+	$Path2D/PathFollow2D/character_2/anim_char_2.current_animation = "morte"
+	yield(get_tree().create_timer(2),"timeout")
+	var SC = preload("res://scenes/screen_restart.tscn").instance()
+	add_child(SC)
+
+

@@ -14,6 +14,17 @@ config/name="Vida De Pedreiro"
 run/main_scene="res://scenes/main_menu.tscn"
 config/icon="res://audio/sound_effects/icon.png"
 
+[autoload]
+
+AudioSystemMaster="*res://scenes/audio_system_master.tscn"
+AudioSystemSingleton="*res://scripts/audio_system_singleton.gd"
+SingletoGame="*res://scripts/singletoGame.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+
 [input]
 
 up_corda={

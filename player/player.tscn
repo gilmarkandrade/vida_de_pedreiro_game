@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://audio/sound_effects/PERS2_Gritando_2.wav" type="AudioStream" id=3]
+[ext_resource path="res://audio/sound_effects/PERS2_Dano_2.wav" type="AudioStream" id=4]
+[ext_resource path="res://audio/sound_effects/PERS2_Gritando_3.wav" type="AudioStream" id=5]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 19.0747
@@ -14,6 +17,21 @@ _data = {
 
 [sub_resource type="CircleShape2D" id=3]
 radius = 28.1473
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 37.7444
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 113.93
+
+[sub_resource type="Animation" id=6]
+resource_name = "esperniando"
+
+[sub_resource type="Animation" id=7]
+resource_name = "idle"
+
+[sub_resource type="Animation" id=8]
+resource_name = "morte"
 
 [node name="player" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -63,3 +81,36 @@ node_a = NodePath("../../KinematicBody2D")
 node_b = NodePath("..")
 disable_collision = false
 softness = 9.0
+
+[node name="area_dano" type="Area2D" parent="Path2D/PathFollow2D/character_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/character_2/area_dano"]
+shape = SubResource( 5 )
+
+[node name="area_externa" type="Area2D" parent="Path2D/PathFollow2D/character_2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/character_2/area_externa"]
+modulate = Color( 1, 0, 0, 1 )
+position = Vector2( 6.10352e-05, 5.29733 )
+shape = SubResource( 4 )
+
+[node name="anim_char_2" type="AnimationPlayer" parent="Path2D/PathFollow2D/character_2"]
+anims/esperniando = SubResource( 6 )
+anims/idle = SubResource( 7 )
+anims/morte = SubResource( 8 )
+
+[node name="grito" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/character_2"]
+stream = ExtResource( 3 )
+
+[node name="reclamando" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/character_2"]
+stream = ExtResource( 5 )
+
+[node name="grunindo" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/character_2"]
+stream = ExtResource( 3 )
+
+[node name="dano" type="AudioStreamPlayer2D" parent="Path2D/PathFollow2D/character_2"]
+stream = ExtResource( 4 )
+
+[connection signal="area_entered" from="Path2D/PathFollow2D/character_2/area_dano" to="." method="_on_area_dano_area_entered"]
+[connection signal="area_entered" from="Path2D/PathFollow2D/character_2/area_externa" to="." method="_on_area_externa_area_entered"]
+[connection signal="animation_finished" from="Path2D/PathFollow2D/character_2/anim_char_2" to="." method="_on_anim_char_2_animation_finished"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PERS2_Pulo_3.wav-3b747a193620de9fa0329afc77a0495e.sample"
+
+[deps]
+
+source_file="res://audio/sound_effects/PERS2_Pulo_3.wav"
+dest_files=[ "res://.import/PERS2_Pulo_3.wav-3b747a193620de9fa0329afc77a0495e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
